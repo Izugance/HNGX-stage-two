@@ -16,7 +16,7 @@ the format {"name": "A name"}.
 * GET "hngx-izu-2.onrender.com/api/user_id": The user_id parameter should a
 name, which we take as "A Name", for example. The format for retrieving a
 Person instance matching  "A Name" would be a GET request to
-"HNG-izu-2/api/a-name". This returns a Person instance in the format {"person":
+  "hngx-izu-2.onrender.com/api/a-name". This returns a Person instance in the format {"person":
 <personInstance>}.
 * POST "hngx-izu-2/api/user_id": Continuing with the previous example, sending
 a POST request to "HNG-izu-2.onrender.com/api/a-name" with a body in the format
