@@ -18,7 +18,7 @@ const getAllPersons = asyncWrapper(async (req, res) => {
 
 const createPerson = asyncWrapper(async (req, res) => {
   // Store names in title case.
-  let name = req.body.user_id;
+  let name = req.body.name;
   let person = await Person.create({ name: _toTitleCase(name) });
   res.status(201).json({ person });
 });
@@ -37,7 +37,7 @@ const getPerson = asyncWrapper(async (req, res, next) => {
 const updatePerson = asyncWrapper(async (req, res, next) => {
   let name = req.params.user_id.replace(/-+/g, " ");
   // Ensure the update keeps the name in title case.
-  req.body.user_id = _toTitleCase(req.body.user_id);
+  req.body.name = _toTitleCase(req.body.name);
   let person = await Person.findOneAndUpdate(
     { name: _toTitleCase(name) },
     req.body,
