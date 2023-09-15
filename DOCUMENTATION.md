@@ -50,7 +50,7 @@ new-person].)
 
 ## Updating a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
-* Request type: POST
+* Request type: PATCH
 * Request headers: Content-Type: application/json
 * Request body structure: {"name": name}
 * Response body: {"person": createdPerson}
