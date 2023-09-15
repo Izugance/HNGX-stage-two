@@ -4,8 +4,8 @@ Person resource. All returned data is in JSON and errors are returned in the
 format {"msg": <error_message>}. The endpoints and their associated request
 methods are listed as follows. (Note that user_id can be passed in any case;
 names are always returned in title case. Also, a returned instance (denoted by
-<personInstance> below is in theformat {"_id": <instance id>, "name": <instance
-name>}.) 
+personInstance below is in the format {"_id": "instance id", "name": "instance
+name"}.) 
 
 * GET "hngx-izu-2.onrender.com/api": Returns a JSON array of Person instances
 in the format {persons: [...personInstances]}.
@@ -17,10 +17,10 @@ the format {"name": "A name"}.
 name, which we take as "A Name", for example. The format for retrieving a
 Person instance matching  "A Name" would be a GET request to
   "hngx-izu-2.onrender.com/api/a-name". This returns a Person instance in the format {"person":
-<personInstance>}.
+personInstance}.
 * POST "hngx-izu-2/api/user_id": Continuing with the previous example, sending
 a POST request to "HNG-izu-2.onrender.com/api/a-name" with a body in the format
 {"name": "a new name"} would update the Person instance matching "a name" and
-return the updated Person instance in the format {"person": <personInstance>}.
+return the updated Person instance in the format {"person": personInstance}.
 * DELETE "hngx-izu-2.onrender.com/api/user_id": A DELETE request to "HNGx-izu2/api/a-name"
-would delete the Person instance matching "a name" from the database.
+would delete the Person instance matching "a name" from the database and return it in the format {"person": personInstance}.
