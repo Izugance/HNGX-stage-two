@@ -22,5 +22,5 @@ personInstance}.
 a POST request to "https://hngx-izu-2.onrender.com/api/a-name" with a body in the format
 {"name": "a new name"} would update the Person instance matching "a name" and
 return the updated Person instance in the format {"person": personInstance}.
-* DELETE hngx-izu-2.onrender.com/api/{user_id}: A DELETE request to "https://hngx-izu-2/api/a-name"
+* DELETE https://hngx-izu-2.onrender.com/api/{user_id}: A DELETE request to "https://hngx-izu-2/api/a-name"
 would delete the Person instance matching "a name" from the database and return it in the format {"person": personInstance}.
