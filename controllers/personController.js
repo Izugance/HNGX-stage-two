@@ -18,13 +18,13 @@ const getAllPersons = asyncWrapper(async (req, res) => {
 
 const createPerson = asyncWrapper(async (req, res) => {
   // Store names in title case.
-  let name = req.body.name;
+  let name = req.body.user_id;
   let person = await Person.create({ name: _toTitleCase(name) });
   res.status(201).json({ person });
 });
 
 const getPerson = asyncWrapper(async (req, res, next) => {
-  let name = req.params.name.replace(/-+/g, " ");
+  let name = req.params.user_id.replace(/-+/g, " ");
   let person = await Person.findOne({ name: _toTitleCase(name) });
 
   if (!person) {
@@ -35,9 +35,9 @@ const getPerson = asyncWrapper(async (req, res, next) => {
 });
 
 const updatePerson = asyncWrapper(async (req, res, next) => {
-  let name = req.params.name.replace(/-+/g, " ");
+  let name = req.params.user_id.replace(/-+/g, " ");
   // Ensure the update keeps the name in title case.
-  req.body.name = _toTitleCase(req.body.name);
+  req.body.user_id = _toTitleCase(req.body.user_id);
   let person = await Person.findOneAndUpdate(
     { name: _toTitleCase(name) },
     req.body,
@@ -56,7 +56,7 @@ const updatePerson = asyncWrapper(async (req, res, next) => {
 });
 
 const deletePerson = asyncWrapper(async (req, res, next) => {
-  let name = req.params.name.replace(/-+/g, " ");
+  let name = req.params.user_id.replace(/-+/g, " ");
   let person = await Person.findOneAndDelete({ name: _toTitleCase(name) });
 
   if (!person) {
