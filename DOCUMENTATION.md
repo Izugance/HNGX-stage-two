@@ -8,12 +8,13 @@ setup locally, too. More on that in this document.
 # A note on errors
 Errors are returned in the format `{"msg": "error message"}`. For example,
 trying to get a person that doesn't exist returns {"msg": "Person with name
-'\<passedName\>' doesn't exist"}.
+'passedName' doesn't exist"}.
 
 # Using the hosted API
 Note that the user_id parameter can be passed in any case, but names are always
 returned in title case. Also, a returned instance (denoted by `personInstance`
-below) is in the format `{"_id": "instance id", "name": "Instance Name"}`.
+below) is in the format
+`{"_id": "instance id", "__v": versionKey, "name": "Instance Name"}`.
 
 ## Creating a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api
@@ -24,7 +25,7 @@ below) is in the format `{"_id": "instance id", "name": "Instance Name"}`.
 
 Example: Sending a POST request to https://hngx-izu-2.onrender.com/api with the
 body {"name": "new person"} returns a response {"person": {"_id": generatedId,
-"name": "New Person"}}.
+"__v": versionKey, "name": "New Person"}}.
 
 ## Getting all Person instances
 * Endpoint: https://hngx-izu-2.onrender.com/api
@@ -32,8 +33,8 @@ body {"name": "new person"} returns a response {"person": {"_id": generatedId,
 * Response body: {"person": arrayOfCreatedPersons}
 
 Example: Assuming we've created a Person instance as in the last example,
-sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response {"persons": [{"_id": generatedId,
-"name": "New Person"}].
+sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response 
+{"persons": [{"_id": generatedId, "__v": versionKey, "name": "New Person"}].
 
 ## Getting a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
@@ -42,8 +43,8 @@ sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response
 * Response body: {"person": matchingPerson}
 
 Example: Following previous examples, a GET request to 
-https://hngx-izu-2.onrender.com/api/new-person returns a response {"person": {"_id": generatedId,
-"name": "New Person"}}.
+https://hngx-izu-2.onrender.com/api/new-person returns a response {"person":
+{"_id": generatedId, "__v": versionKey, "name": "New Person"}}.
 
 (Note that the user_id parameter is passed with hyphens separating names [i.e.
 new-person].)
@@ -57,7 +58,8 @@ new-person].)
 
 Example: Sending a POST request to
 https://hngx-izu-2.onrender.com/api/new-person with the body {"name": "changed person"} 
-returns a response {"person": {"_id": generatedId, "name": "Changed Person"}}.
+returns a response {"person": {"_id": generatedId, "__v": versionKey, "name":
+"Changed Person"}}.
 
 
 ## Deleting a Person instance
@@ -67,8 +69,8 @@ returns a response {"person": {"_id": generatedId, "name": "Changed Person"}}.
 
 Example: Following the previous example, sending a DELETE request to
 https://hngx-izu-2.onrender.com/api/created-person returns a response
-{"person": {"_id": generatedId, "name": "New Person"}} representing the
-deleted Person instance.
+{"person": {"_id": generatedId, "__v": versionKey, "name": "New Person"}}
+representing the deleted Person instance.
 
 # Local Setup
 If you have NodeJS installed on your machine, you can setup this project
