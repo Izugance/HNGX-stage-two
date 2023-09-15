@@ -23,8 +23,8 @@ below) is in the format `{"_id": "instance id", "name": "Instance Name"}`.
 * Response body: {"person": createdPerson}
 
 Example: Sending a POST request to https://hngx-izu-2.onrender.com/api with the
-body {"name": "new person"} returns a response {"_id": \<generatedId\>,
-"name": "New Person"}
+body {"name": "new person"} returns a response {"person": {"_id": generatedId,
+"name": "New Person"}}.
 
 ## Getting all Person instances
 * Endpoint: https://hngx-izu-2.onrender.com/api
@@ -33,7 +33,7 @@ body {"name": "new person"} returns a response {"_id": \<generatedId\>,
 
 Example: Assuming we've created a Person instance as in the last example,
 sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response {"persons": [{"_id": generatedId,
-"name": "New Person"}]
+"name": "New Person"}].
 
 ## Getting a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
@@ -43,10 +43,10 @@ sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response
 
 Example: Following previous examples, a GET request to 
 https://hngx-izu-2.onrender.com/api/new-person returns a response {"person": {"_id": generatedId,
-"name": "New Person"}}
+"name": "New Person"}}.
 
-(Note that the user_id parameter is passed with hyphens separating names (i.e.
-new-person).)
+(Note that the user_id parameter is passed with hyphens separating names [i.e.
+new-person].)
 
 ## Updating a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
