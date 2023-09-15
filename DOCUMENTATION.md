@@ -19,7 +19,7 @@ Person instance matching  "A Name" would be a GET request to
   https://hngx-izu-2.onrender.com/api/a-name. This returns a Person instance, if there is one, in the format {"person":
 personInstance}.
 * POST https://hngx-izu-2.onrender.com/api/{user_id}: Continuing with the previous example, sending
-a POST request to "https://hngx-izu-2.onrender.com/api/a-name" with a body in the format
+a POST request to "https://hngx-izu-2.onrender.com/api/a-name" with a the request body having the application/json MIME type and in the format
 {"name": "a new name"} would update the Person instance matching "a name" and
 return the updated Person instance in the format {"person": personInstance}.
 * DELETE https://hngx-izu-2.onrender.com/api/{user_id}: A DELETE request to "https://hngx-izu-2/api/a-name"
