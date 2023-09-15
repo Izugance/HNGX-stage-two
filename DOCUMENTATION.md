@@ -7,20 +7,20 @@ names are always returned in title case. Also, a returned instance (denoted by
 personInstance below is in the format {"_id": "instance id", "name": "instance
 name"}.) 
 
-* GET "hngx-izu-2.onrender.com/api": Returns a JSON array of Person instances
+* GET "https://hngx-izu-2.onrender.com/api": Returns a JSON array of Person instances
 in the format {persons: [...personInstances]}.
-* POST "hngx-izu-2.onrender.com/api": This endpoint creates a Person instance
+* POST "https://hngx-izu-2.onrender.com/api": This endpoint creates a Person instance
 and returns it in the format {"person": <personInstance>}.
 The request body should be in the application/json MIME type and should be in
 the format {"name": "A name"}.
-* GET "hngx-izu-2.onrender.com/api/user_id": The user_id parameter should a
+* GET "https://hngx-izu-2.onrender.com/api/user_id": The user_id parameter should a
 name, which we take as "A Name", for example. The format for retrieving a
 Person instance matching  "A Name" would be a GET request to
-  "hngx-izu-2.onrender.com/api/a-name". This returns a Person instance in the format {"person":
+  "https://hngx-izu-2.onrender.com/api/a-name". This returns a Person instance in the format {"person":
 personInstance}.
-* POST "hngx-izu-2/api/user_id": Continuing with the previous example, sending
-a POST request to "HNG-izu-2.onrender.com/api/a-name" with a body in the format
+* POST "https://hngx-izu-2/api/user_id": Continuing with the previous example, sending
+a POST request to "https://hngx-izu-2.onrender.com/api/a-name" with a body in the format
 {"name": "a new name"} would update the Person instance matching "a name" and
 return the updated Person instance in the format {"person": personInstance}.
-* DELETE "hngx-izu-2.onrender.com/api/user_id": A DELETE request to "HNGx-izu2/api/a-name"
+* DELETE "hngx-izu-2.onrender.com/api/user_id": A DELETE request to "https://hngx-izu-2/api/a-name"
 would delete the Person instance matching "a name" from the database and return it in the format {"person": personInstance}.
