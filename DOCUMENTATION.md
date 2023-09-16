@@ -34,7 +34,7 @@ body {"name": "new person"} returns a response {"person": {"_id": generatedId,
 
 Example: Assuming we've created a Person instance as in the last example,
 sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response 
-{"persons": [{"_id": generatedId, "__v": versionKey, "name": "New Person"}].
+{"persons": [{"_id": generatedId, "__v": versionKey, "name": "New Person"}]}.
 
 ## Getting a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
