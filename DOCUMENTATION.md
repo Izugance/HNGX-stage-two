@@ -11,7 +11,7 @@ trying to get a person that doesn't exist returns {"msg": "Person with name
 'passedName' doesn't exist"}.
 
 # Using the hosted API
-Note that the user_id parameter can be passed in any case, but names are always
+Note that the `user_id` parameter can be passed in any case, but names are always
 returned in title case. Also, a returned instance (denoted by `personInstance`
 below) is in the format
 `{"_id": "instance id", "__v": versionKey, "name": "Instance Name"}`.
