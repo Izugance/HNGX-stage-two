@@ -30,7 +30,7 @@ body {"name": "new person"} returns a response {"person": {"_id": generatedId,
 ## Getting all Person instances
 * Endpoint: https://hngx-izu-2.onrender.com/api
 * Request type: GET
-* Response body: {"person": arrayOfCreatedPersons}
+* Response body: {"persons": arrayOfCreatedPersons}
 
 Example: Assuming we've created a Person instance as in the last example,
 sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response 
@@ -64,7 +64,7 @@ returns a response {"person": {"_id": generatedId, "__v": versionKey, "name":
 
 ## Deleting a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
-* Request type: POST
+* Request type: DELETE
 * Response body: {"person": deletedPerson}
 
 Example: Following the previous example, sending a DELETE request to
