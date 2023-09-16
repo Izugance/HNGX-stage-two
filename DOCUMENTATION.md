@@ -39,14 +39,13 @@ sending a GET request to https://hngx-izu-2.onrender.com/api  returns a response
 ## Getting a Person instance
 * Endpoint: https://hngx-izu-2.onrender.com/api/{user_id}
 * Request type: GET
-* Request body structure: {"name": name}
 * Response body: {"person": matchingPerson}
 
 Example: Following previous examples, a GET request to 
 https://hngx-izu-2.onrender.com/api/new-person returns a response {"person":
 {"_id": generatedId, "__v": versionKey, "name": "New Person"}}.
 
-(Note that the user_id parameter is passed with hyphens separating names [i.e.
+(Note that the `user_id` parameter is passed with hyphens separating names [i.e.
 new-person].)
 
 ## Updating a Person instance
